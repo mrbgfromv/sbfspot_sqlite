@@ -6,7 +6,7 @@
 # Check, if there is an environment parameter
 if [ "$SBFSPOT_UPLOADDAEMON_FILENAME" == "" ]; then
 	echo "No configfile name in environment."
-	echo "Assuming /config/SBspotUpload.cfg"
+	echo "Assuming /config/SBFspotUpload.cfg"
 	echo
 	SBFSPOT_UPLOADDAEMON_FILENAME="/config/SBFspotUpload.cfg"
 fi
