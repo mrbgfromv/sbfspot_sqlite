@@ -11,5 +11,5 @@ if [ "$SBFSPOT_UPLOADDAEMON_FILENAME" == "" ]; then
 	SBFSPOT_UPLOADDAEMON_FILENAME="/config/SBFspotUpload.cfg"
 fi
 echo "Executing SBFspotUploadDaemon: /opt/sbfspot/SBFspotUploadDaemon $SBFSPOT_UPLOADDAEMON_FILENAME ..."
-/opt/sbfspot/SBFspotUploadDaemon $SBFSPOT_UPLOADDAEMON_FILENAME
+/opt/sbfspot/SBFspotUploadDaemon -c$SBFSPOT_UPLOADDAEMON_FILENAME
 
