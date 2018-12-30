@@ -4,11 +4,12 @@
 #
 
 # Check, if there is an environment parameter
-if [ "$SBFSPOT_UPLOADDAEMON_FILENAME" == "" ]; then
+if [ "$UPLOADDAEMON_CONFIGFILE" == "" ]; then
 	echo "No configfile name in environment."
 	echo "Assuming /config/SBFspotUpload.cfg"
 	echo
-	SBFSPOT_UPLOADDAEMON_FILENAME="/config/SBFspotUpload.cfg"
+	UPLOADDAEMON_CONFIGFILE="/config/SBFspotUpload.cfg"
 fi
-echo "Executing SBFspotUploadDaemon: /opt/sbfspot/SBFspotUploadDaemon $SBFSPOT_UPLOADDAEMON_FILENAME ..."
-/opt/sbfspot/SBFspotUploadDaemon -c"$SBFSPOT_UPLOADDAEMON_FILENAME"
+echo "Executing SBFspotUploadDaemon:"
+echo "/opt/sbfspot/SBFspotUploadDaemon $UPLOADDAEMON_CONFIGFILE ..."
+/opt/sbfspot/SBFspotUploadDaemon -c"$UPLOADDAEMON_CONFIGFILE"
