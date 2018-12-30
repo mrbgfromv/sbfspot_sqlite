@@ -65,6 +65,10 @@ RUN mv /usr/local/bin/sbfspot.3 $SBFSPOTDIR \
 && cp $SBFSPOT_HOME/SBFspot/SBFspot/CreateMySQL*.sql $SBFSPOTDIR \
 && rm -rf $SBFSPOT_HOME/SBFspot
 
+# Copy Startup-Script for the UploadDaemon
+COPY start.sh $SBFSPOTDIR/
+RUN chmod +x $SBFSPOTDIR/start.sh
+
 # Setup data directory
 RUN mkdir $SMADATA && chown -R ${user}:${group} $SMADATA
 # Setup config directory
@@ -74,4 +78,4 @@ VOLUME ["/smadata", "/config"]
 
 USER ${user}
 
-CMD /opt/sbfspot/SBFspotUploadDaemon -c /config/SBFspotUpload.cfg
+CMD [ "/opt/sbfspot/start.sh" ]
