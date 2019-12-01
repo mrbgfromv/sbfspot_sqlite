@@ -29,6 +29,7 @@ g++ \
 git \
 mercurial \
 ca-certificates \
+mosquitto-clients \
 patch \
 && rm -rf /var/lib/apt/lists/*
 
